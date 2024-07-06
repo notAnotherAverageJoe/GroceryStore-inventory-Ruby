@@ -79,10 +79,13 @@ class Inventory
         Grocery.new(item_name, stock_amount, id,department, shelf_life)
 
       elsif id == "P"
+        #{gathering information for the produce section}
         puts "Does the item require a wet wall? (yes/no): "
         wet_wall_input = gets.chomp.downcase
         puts "Is this for the Fruit cut seciton? (yes/no)"
         fruit_cut_input =gets.chomp.downcase
+        #{checking to see if the produce requires fruit cutters}
+
         if ( fruit_cut_input == 'yes' ||fruit_cut_input == 'y')
           puts "Please enter the weekly count: "
           weekly_count = gets.chomp
@@ -92,7 +95,6 @@ class Inventory
           cut_style = gets.chomp
           FruitCutting.new(item_name, stock_amount, id, department, weekly_count, exp_date, cut_style)
         else
-
         wet_wall = case wet_wall_input
                    when "yes", "y"
                      true
@@ -101,6 +103,7 @@ class Inventory
                    end
                    Produce.new(item_name, stock_amount, id, department, wet_wall)
                   end
+                  
       elsif id == "B"
         puts "What type of pastry is it? (cake, cupcake, bread)"
         pastry_type= gets.chomp
