@@ -7,6 +7,8 @@ require_relative 'bakery'
 require_relative 'liquor'
 require_relative 'dairy'
 require_relative 'butchering'
+require_relative 'fruitcut'
+
 
 
 
